@@ -6,7 +6,9 @@ from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 # Ensure parent directory (project root) is in Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 
-from models.llm import get_hf_llm
+# old: from models.llm import get_hf_llm
+from models.llm import get_hf_client, generate_text
+
 from utils.rag import load_documents, create_vector_store, search
 from utils.web_search import ddg_search
 
@@ -14,36 +16,25 @@ from utils.web_search import ddg_search
 # ------------------------------
 # CHAT RESPONSE FUNCTION
 # ------------------------------
-def get_chat_response(chat_model, messages, system_prompt):
-    """Generate assistant response using LLM."""
+def get_chat_response(chat_client, messages, system_prompt):
+    """Generate assistant response using the HF InferenceClient."""
     try:
         formatted_messages = [SystemMessage(content=system_prompt)]
-
-        # Add chat history
+        # add conversation
         for msg in messages:
             if msg["role"] == "user":
                 formatted_messages.append(HumanMessage(content=msg["content"]))
             else:
                 formatted_messages.append(AIMessage(content=msg["content"]))
 
-        # Convert all messages into a single prompt
         prompt_text = "\n".join([m.content for m in formatted_messages])
 
-        # Call the HuggingFace model
-        from models.llm import generate_text
-        response = generate_text(chat_model, prompt_text)
-
-
-        # Handle different possible return types
-        if isinstance(response, str):
-            return response
-        if hasattr(response, "content"):
-            return response.content
-        return str(response)
+        # Use the generate_text helper to call the HF Inference API
+        response_text = generate_text(chat_client, prompt_text)
+        return response_text
 
     except Exception as e:
         return f"Error getting response: {str(e)}"
-
 
 # ------------------------------
 # INSTRUCTIONS PAGE
@@ -76,7 +67,7 @@ def chat_page():
 
     # Load model
     try:
-        chat_model = get_hf_llm()
+         chat_client = get_hf_client()
     except Exception as e:
         st.error(str(e))
         return
@@ -167,5 +158,6 @@ def main():
 # ------------------------------
 if __name__ == "__main__":
     main()
+
 
 
