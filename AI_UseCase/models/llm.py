@@ -1,5 +1,5 @@
 from langchain_community.llms import HuggingFaceHub
-from config import HF_API_KEY, HF_LLM_MODEL, HF_TEMPERATURE, HF_MAX_NEW_TOKENS
+from config.config import HF_API_KEY, HF_LLM_MODEL, HF_TEMPERATURE, HF_MAX_NEW_TOKENS
 
 
 
@@ -21,4 +21,5 @@ def get_hf_llm():
         "temperature": HF_TEMPERATURE,
         "max_new_tokens": HF_MAX_NEW_TOKENS,
             }
+
         )
