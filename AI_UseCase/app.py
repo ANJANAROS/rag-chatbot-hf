@@ -30,7 +30,7 @@ def get_chat_response(chat_model, messages, system_prompt):
         prompt_text = "\n".join([m.content for m in formatted_messages])
 
         # Call the HuggingFace model
-        response = chat_model(prompt_text)
+        response = chat_model.invoke(prompt_text)
 
         # Handle different possible return types
         if isinstance(response, str):
@@ -165,3 +165,4 @@ def main():
 # ------------------------------
 if __name__ == "__main__":
     main()
+
