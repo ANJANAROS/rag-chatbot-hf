@@ -5,5 +5,7 @@ langchain-core
 langchain-openai
 langchain-groq
 langchain-google-genai
+langchain_community
 numpy
 requests
+
