@@ -1,0 +1,23 @@
+Deep Learning (DL) is a subset of ML using neural networks with multiple layers.
+
+Key concepts:
+- Neural Networks: Layers of interconnected neurons
+- Activation functions: ReLU, Sigmoid, Tanh
+- Loss functions: Cross-entropy, MSE
+- Optimizers: Adam, SGD
+
+Popular architectures:
+- CNNs (Convolutional Neural Networks) for images
+- RNNs / LSTMs for sequences
+- Transformers for language
+
+Deep learning frameworks:
+- TensorFlow
+- PyTorch
+- Keras
+
+Use cases:
+- Image recognition
+- Speech processing
+- Chatbots and LLMs
+- Video analytics

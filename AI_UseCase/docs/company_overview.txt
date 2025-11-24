@@ -1,0 +1,14 @@
+NeoStats Analytics is a company focused on data-driven innovation, artificial intelligence,
+and intelligent automation solutions for businesses.
+
+NeoStats provides:
+- AI-powered analytics platforms
+- Chatbot development
+- Predictive forecasting systems
+- Enterprise automation tools
+
+The AI Engineer role includes:
+- Building LLM-powered systems
+- Creating RAG pipelines
+- Integrating external APIs
+- Ensuring model accuracy and reliability

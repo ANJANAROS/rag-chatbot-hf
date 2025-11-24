@@ -1,0 +1,21 @@
+Retrieval-Augmented Generation (RAG) improves chatbot accuracy using external documents.
+
+RAG pipeline:
+1. Load documents
+2. Split into chunks
+3. Create embeddings
+4. Store embeddings in a vector store (FAISS)
+5. For every user query → retrieve top relevant chunks
+6. Send chunks + query to LLM → produce accurate answer
+
+Why RAG is important:
+- LLMs can hallucinate
+- Company-specific knowledge is not in the base model
+- RAG ensures answers come from real documents
+
+LangChain components used:
+- Document loaders
+- Text splitters
+- Embeddings (OpenAI / HuggingFace)
+- Vector stores (FAISS)
+- Chat model (Groq, OpenAI, Gemini)

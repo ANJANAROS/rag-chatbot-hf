@@ -1,0 +1,13 @@
+Artificial Intelligence (AI) is the simulation of human intelligence in machines.
+It enables systems to perform tasks such as reasoning, learning, planning,
+and decision-making.
+
+Modern AI involves:
+- Machine Learning (ML)
+- Deep Learning (DL)
+- Natural Language Processing (NLP)
+- Computer Vision (CV)
+- Large Language Models (LLMs)
+
+AI applications include chatbots, recommendation systems, predictive analytics,
+healthcare diagnostics, fraud detection, and autonomous vehicles.

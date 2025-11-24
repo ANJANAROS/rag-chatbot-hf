@@ -1,0 +1,18 @@
+The use case for the assessment includes:
+
+1. Building a chatbot using Streamlit.
+2. Implementing a Retrieval Augmented Generation (RAG) pipeline.
+3. Adding web search support using DuckDuckGo.
+4. Allowing selection of response modes: Concise or Detailed.
+5. Using Groq/OpenAI/Gemini models.
+6. Creating a PPT describing the approach.
+7. Uploading:
+   - Deployment link
+   - Public GitHub repository
+   - PPT describing architecture and challenges
+
+Key expectations:
+- Clean code structure
+- Modular design (models/, utils/, docs/)
+- Working RAG search
+- Working Chat UI

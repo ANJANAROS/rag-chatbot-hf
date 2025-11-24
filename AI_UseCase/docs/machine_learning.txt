@@ -1,0 +1,23 @@
+Machine Learning (ML) is a subset of AI where systems learn patterns from data.
+
+Types of ML:
+1. Supervised Learning
+   - Regression (predicting continuous values)
+   - Classification (predicting categories)
+   - Algorithms: Linear Regression, Logistic Regression, SVM, Decision Trees
+
+2. Unsupervised Learning
+   - Clustering and grouping similar data
+   - Algorithms: K-Means, PCA
+
+3. Reinforcement Learning
+   - Agent learns actions by receiving rewards or penalties.
+
+Common ML workflow:
+- Data collection
+- Cleaning and preprocessing
+- Feature engineering
+- Model training
+- Evaluation and deployment
+
+Popular libraries: Scikit-learn, TensorFlow, PyTorch.
