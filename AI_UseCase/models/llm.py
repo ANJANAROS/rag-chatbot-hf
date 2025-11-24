@@ -1,26 +1,27 @@
-from langchain_community.llms.huggingface_hub import HuggingFaceHub
+import os
+from huggingface_hub import InferenceClient
 from config.config import HF_API_KEY, HF_LLM_MODEL, HF_TEMPERATURE, HF_MAX_NEW_TOKENS
 
 
-
-
 def get_hf_llm():
-    """Return an LLM instance connected to HuggingFace Hub.
-
-
-    This requires HF_API_KEY to be set as an environment variable.
-    """
+    """Return an HF Inference Client for text generation."""
     if not HF_API_KEY:
-        raise EnvironmentError("HF_API_KEY is not set. Please set it in your environment.")
+        raise EnvironmentError("HF_API_KEY is not set in environment variables.")
+
+    client = InferenceClient(
+        model=HF_LLM_MODEL,
+        token=HF_API_KEY
+    )
+
+    return client
 
 
-    return HuggingFaceHub(
-        repo_id=HF_LLM_MODEL,
-        huggingfacehub_api_token=HF_API_KEY,
-        model_kwargs={
-        "temperature": HF_TEMPERATURE,
-        "max_new_tokens": HF_MAX_NEW_TOKENS,
-            }
-
-        )
-
+def generate_text(client, prompt):
+    """Use the new HF API to generate text properly."""
+    response = client.text_generation(
+        prompt,
+        max_new_tokens=HF_MAX_NEW_TOKENS,
+        temperature=HF_TEMPERATURE,
+        stream=False
+    )
+    return response
