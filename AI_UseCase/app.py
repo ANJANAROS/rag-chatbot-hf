@@ -110,11 +110,12 @@ def chat_page():
                 system_prompt += f"\n=== WEB SEARCH RESULTS ===\n{web_results}\n"
 
                 # Generate response
-                response = get_chat_response(
-                    chat_model,
+               response = get_chat_response(
+                    chat_client,
                     st.session_state.messages,
                     system_prompt
                 )
+
 
                 st.markdown(response)
 
@@ -158,6 +159,7 @@ def main():
 # ------------------------------
 if __name__ == "__main__":
     main()
+
 
 
 
