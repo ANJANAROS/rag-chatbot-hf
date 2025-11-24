@@ -114,10 +114,10 @@ def chat_page():
                     chat_client,
                     st.session_state.messages,
                     system_prompt
-                )
+               )
 
 
-                st.markdown(response)
+               st.markdown(response)
 
         st.session_state.messages.append({"role": "assistant", "content": response})
 
@@ -159,6 +159,7 @@ def main():
 # ------------------------------
 if __name__ == "__main__":
     main()
+
 
 
 
